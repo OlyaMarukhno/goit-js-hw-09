@@ -1,4 +1,3 @@
-// Импорт библиотеки и стилей (убедитесь, что выполнили npm install simplelightbox)
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
@@ -52,7 +51,6 @@ const images = [
 
 const galleryContainer = document.querySelector(".gallery");
 
-// 1. Создание разметки
 const galleryMarkup = images
   .map(
     ({ preview, original, description }) => `
@@ -68,11 +66,8 @@ const galleryMarkup = images
   )
   .join("");
 
-// 2. Добавление разметки в DOM
 galleryContainer.innerHTML = galleryMarkup;
 
-// 3. Инициализация SimpleLightbox
-// Важно: вызываем один раз после добавления разметки
 new SimpleLightbox(".gallery a", {
   captions: true,
   captionsData: "alt",
